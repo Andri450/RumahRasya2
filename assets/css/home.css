@@ -1,0 +1,85 @@
+@font-face {
+    font-family: Playfair;
+    src: 'assets/fonts/PlayfairDisplay-Regular.ttf';
+}
+
+body {
+    background-color: white;
+    color: #333333;
+    font-family: Playfair;
+}
+
+.navbar{
+    background-color: transparent;
+    color: #333333;
+    margin: 0;
+}
+
+.nav-link{
+    color: #333333;
+}
+
+.nav-link:hover{
+    color: #CD949C;
+}
+
+.navbar, .navbar-collapse {
+    transition: 0.8s ease-in-out;
+    text-align: center;
+}
+
+.navbar .collpsed{
+    text-align: center;
+}
+
+.navbar .navbar-toggler{
+    transition: 0.8s ease-in-out;
+}
+
+.logo > img{
+    width: 60px;
+    height: 60px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.iconCs{
+    text-align: end;
+    font-size: 40px;
+}
+
+.boxCs{
+    margin-top: 5px;
+}
+
+.box1{
+    height: 500px;
+}
+
+.hero-image img{
+    height: 500px;
+    width: 100%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  position: relative;
+  border-bottom-left-radius: 150px;
+  background-color: #CD949C;
+}
+
+.hero-text {
+    padding-top: 50%;
+    padding-left: 10%;
+    color: #333333;
+
+}
+
+
+/* .navAtas > .iconCS > i{
+    font-size: 40px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+} */
