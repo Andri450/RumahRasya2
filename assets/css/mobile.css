@@ -42,10 +42,22 @@ body{
 }
 
 .tombol-menu{
+    position: relative;
     transition: .8s;
     font-size: 30px;
     text-align: end;
     color: #333333;
+}
+
+.tombol-menu2{
+    display: none;
+    position: fixed;
+    right: 4%;
+    top: 1%;
+    font-size: 30px;
+    background-color: white;
+    z-index: 999998;
+    border-radius: 20px;
 }
 
 @keyframes anim-bukaMenu {
@@ -68,7 +80,7 @@ body{
 }
 
 .menu-bar{
-    display: none;
+    display: block;
     background-color: #333333;
     position: fixed;
     width: 200px;
@@ -76,7 +88,7 @@ body{
     right: 6%;
     top: 2%;
     border-radius: 20px;
-    z-index: 2;
+    z-index: 999999;
 }
 
 .show-menu{
@@ -108,7 +120,81 @@ body{
     }
 }
 
+.tombol-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+}
+
+.list-menu{
+    transition: .8s;
+    margin-top: 50px;
+    display: none;
+}
+
+.list-menu ul{
+    list-style: none;
+}
+
+.list-menu ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.list-menu > ul > li > a > .fa-solid{
+    width: 40px;
+}
+
+.aktif{
+    color: #CD949C;
+    background-color: #CD949C;
+    padding: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
 .judul{
     margin-top: 20px;
     margin-left: 20px;
+}
+
+.subJudul{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.isi{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.judul-menu h1{
+    /* text-align: center; */
+    margin-left: 20px;
+}
+
+.boxs-project{
+    margin: 0 auto;
+}
+
+.box-project12{
+    background-color: #CD949C;
+    height: 200px;
+    width: 200px;
+}
+
+.box-project6{
+    /* background-color: #CD949C; */
+    /* height: 200px; */
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+.box-project6 img{
+    border-radius: 8px;
 }
