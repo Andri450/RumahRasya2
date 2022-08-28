@@ -73,7 +73,7 @@ body{
     }
     100% {
         width: 200px; 
-        height: 240px;
+        height: 280px;
         border-radius: 20px;
         opacity: 1;
     }
@@ -84,7 +84,7 @@ body{
     background-color: #333333;
     position: fixed;
     width: 200px;
-    height: 240px;
+    height: 280px;
     right: 6%;
     top: 2%;
     border-radius: 20px;
@@ -104,7 +104,7 @@ body{
 @keyframes anim-tutupMenu {
     0% {
         width: 200px; 
-        height: 240px;
+        height: 280px;
         opacity: 1;
     }
     30% {
@@ -166,6 +166,18 @@ body{
     margin-left: 20px;
 }
 
+video {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+
+.foto > img{
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+
 .isi{
     margin-top: 0px;
     margin-left: 20px;
@@ -190,11 +202,8 @@ body{
     /* background-color: #CD949C; */
     /* height: 200px; */
     width: 200px;
+    height: 200px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-}
-
-.box-project6 img{
-    border-radius: 8px;
 }

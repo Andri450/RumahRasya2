@@ -15,7 +15,10 @@
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <title>Mobile</title>
+    <title>Jasa Desain Interior Dan Eksterior Rumah Lampung | RumahRasya.id</title>
+    <meta name="description" content="Jasa Desain Dan Pengerjaan Interior Dan Eksterior Rumah Terbaik Di Lampung, Kami Memperkerjakan pekerja Profesional Yang Berpengalaman di Bidangnya">
+    <meta name="keywords" content="Jasa, Desain, Interior, Eksterior, Rumah, Berkualitas, Harga Murah, Lampung, Desain Rumah Terbaik, Interior Rumah, Eksterior Rumah, Bangun Rumah, Tahun, <?= date('Y') ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="container-fluid">
@@ -50,6 +53,9 @@
                     </ul>
                     <ul>
                         <li id="legal" ><a href=""><i class="fa-solid fa-file-contract"></i>Legal</a></li>
+                    </ul>
+                    <ul>
+                        <li id="kalkulasi" ><a href=""><i class="fa-solid fa-calculator"></i>Kalkulasi Harga</a></li>
                     </ul>
                     <ul>
                         <li id="kontak" ><a href=""><i class="fa-solid fa-headset"></i>Kontak</a></li>
@@ -111,206 +117,47 @@
                 </div>
             </div>
             <div class="col-12 row boxs-project mt-3">
-                <div class="col-6 box-project6">
+                <div class="col-6 ">
                     <div class="row foto">
-                        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/rum.jpg') ?>" alt="First slide">
-                                <div class="carousel-caption">
-                                    <h5>Before</h5>
-                                    
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="Second slide">
-                                <div class="carousel-caption">
-                                    <h5>After</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                        </div>
+                        <video class="" src="<?= base_url('assets/foto/vid.mp4') ?>" controls></video>
                     </div>
                 </div>
-                <div class="col-6 box-project6">
+                <div class="col-6 ">
                     <div class="row foto">
-                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/rum.jpg') ?>" alt="First slide">
-                                <div class="carousel-caption">
-                                    <h5>Before</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="Second slide">
-                                <div class="carousel-caption">
-                                    <h5>After</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                        </div>
+                       <img class="" src="<?= base_url('assets/foto/6d6c27bc-5501-4120-bf49-39a5820f7acf.JPG') ?>" alt=""> 
                     </div>
                 </div>
-                <div class="col-12 box-project6">
+                <div class="col-12">
                     <div class="row foto">
-                        <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active min-vh-100">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/rum.jpg') ?>" alt="First slide">
-                                <div class="carousel-caption">
-                                    <h5>Before</h5>
-                                    
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="Second slide">
-                                <div class="carousel-caption">
-                                    <h5>After</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                        </div>
+                       <img src="<?= base_url('assets/foto/rum.jpg') ?>" alt=""> 
                     </div>
                 </div>
-                <div class="col-6 box-project6">
+                <div class="col-6 ">
                     <div class="row foto">
-                        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/rum.jpg') ?>" alt="First slide">
-                                <div class="carousel-caption">
-                                    <h5>Before</h5>
-                                    
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="Second slide">
-                                <div class="carousel-caption">
-                                    <h5>After</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                        </div>
+                       <img class="" src="<?= base_url('assets/foto/5040edb4-c8b0-46db-89ed-e75d4c43e651.JPG') ?>" alt=""> 
                     </div>
                 </div>
-                <div class="col-6 box-project6">
+                <div class="col-6 ">
                     <div class="row foto">
-                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/rum.jpg') ?>" alt="First slide">
-                                <div class="carousel-caption">
-                                    <h5>Before</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="Second slide">
-                                <div class="carousel-caption">
-                                    <h5>After</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                        </div>
+                        <img src="<?= base_url('assets/foto/09ff3b5b-cb88-4419-b687-fe407325d7f7 (2).JPG') ?>" alt="">
                     </div>
                 </div>
-                <div class="col-12 box-project6">
+                <div class="col-12">
                     <div class="row foto">
-                        <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active min-vh-100">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/rum.jpg') ?>" alt="First slide">
-                                <div class="carousel-caption">
-                                    <h5>Before</h5>
-                                    
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="Second slide">
-                                <div class="carousel-caption">
-                                    <h5>After</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                        </div>
+                        <video class="" src="<?= base_url('assets/foto/vid2.mp4') ?>" controls></video>
                     </div>
                 </div>
+                <div class="col-6 ">
+                    <div class="row foto">
+                       <img class="" src="<?= base_url('assets/foto/salon.jpg') ?>" alt=""> 
+                    </div>
+                </div>
+                <div class="col-6 ">
+                    <div class="row foto">
+                        <img src="<?= base_url('assets/foto/09ff3b5b-cb88-4419-b687-fe407325d7f7 (2).JPG') ?>" alt="">
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>  

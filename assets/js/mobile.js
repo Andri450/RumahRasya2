@@ -23,7 +23,7 @@ $(document).ready(function(){
         $( '#menu-bar' ).addClass('show-menu');
         $( '#menu-bar' ).removeClass('hide-menu');
         $( '#menu-bar' ).fadeIn();
-        $('.list-menu').delay(500).fadeIn();
+        $('.list-menu').delay(800).fadeIn();
     }
 
     function sembunyiin(){
