@@ -156,14 +156,26 @@ body{
     border-bottom-left-radius: 20px;
 }
 
+.carousel-item > img{
+    width: 100%;
+    height: 100%;
+}
+
 .judul{
     margin-top: 20px;
     margin-left: 20px;
 }
 
-.subJudul{
+.subJudul {
     margin-top: 0px;
     margin-left: 20px;
+    margin-right: 20px;
+    width: 70%;
+}
+
+.subJudul > h2{
+    font-size: 18px;
+    text-align: justify;
 }
 
 video {
@@ -181,9 +193,11 @@ video {
 .isi{
     margin-top: 0px;
     margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
 }
 
-.judul-menu h1{
+.judul-menu {
     /* text-align: center; */
     margin-left: 20px;
 }
