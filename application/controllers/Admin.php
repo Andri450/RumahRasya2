@@ -17,6 +17,8 @@ class Admin extends CI_Controller {
 		$dat['isi_heading'] = $this->m_data->ambil_isi_heading()->result();
 		$dat['sub_judul_project'] = $this->m_data->ambil_sub_judul_project()->result();
 		$dat['media_project'] = $this->m_data->ambil_media_project()->result();
+		$dat['sub_legal'] = $this->m_data->ambil_sub_legal()->result();
+		$dat['harga'] = $this->m_data->ambil_harga()->result();
 		// var_dump($dat);
 		// die;
 		
@@ -103,5 +105,17 @@ class Admin extends CI_Controller {
 			$error = array('error' => $this->upload->display_errors());
             var_dump($error);
         }
+	}
+
+	public function ubah_subLegal(){
+		$isi = $this->input->post('isi');
+		$this->m_data->ubah_subLegal($isi);
+		redirect('Admin');
+	}
+
+	public function ubah_harga(){
+		$harga = $this->input->post('perMeter');
+		$this->m_data->ubah_harga($harga);
+		redirect('Admin');
 	}
 }

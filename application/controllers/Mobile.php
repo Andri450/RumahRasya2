@@ -3,24 +3,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mobile extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/userguide3/general/urls.html
-	 */
+	function __construct(){
+		parent::__construct();		
+	}
+
 	public function index()
 	{
 		$this->load->helper('url');
+		$this->load->model('m_data');
+		
+		$dat['logo'] = $this->m_data->ambil_logo()->result();
+		$dat['sub_judul'] = $this->m_data->ambil_sub_judul()->result();
+		$dat['foto_heading'] = $this->m_data->ambil_foto_heading()->result();
+		$dat['isi_heading'] = $this->m_data->ambil_isi_heading()->result();
+		$dat['sub_judul_project'] = $this->m_data->ambil_sub_judul_project()->result();
+		$dat['media_project'] = $this->m_data->ambil_media_project()->result();
+		$dat['sub_legal'] = $this->m_data->ambil_sub_legal()->result();
+		$dat['harga'] = $this->m_data->ambil_harga()->result();
+
 		$this->load->view('Mobile');
+	}
+
+	public function upload_feedback(){
+		$this->load->model('m_data');
+		$this->load->helper('url');
+
+		$dats = array(
+			'nama' => $this->input->post('nama'),
+			'email' => $this->input->post('email'),
+			'no_wa' => $this->input->post('wa'),
+			'pesan' => $this->input->post('pesan'),
+		);
+
+		$this->m_data->upload_feedback($dats);
+		
+		redirect('Mobile');
 	}
 }

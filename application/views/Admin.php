@@ -274,7 +274,10 @@
                                     </div>
                                     <div class="row isi">
                                         <div class="col-12">
-                                            <p>Perizinan Usaha Kami...</p>
+                                            <p class="subLegal-asli"><?= $sub_legal[0]->isi_sub_legal ?></p>
+                                        </div>
+                                        <div class="edit" id="edit-subLegal">
+                                            <i class="fa-solid fa-pen-to-square"></i>
                                         </div>
                                     </div>
                                     <div class="col-12 row foto-legal boxs-project">
@@ -309,6 +312,10 @@
                                         <div class="row isi">
                                             <div class="col-12">
                                             <p class="total">Estimasi: Rp. <span id="total">0</span>,-</p>
+                                            </div>
+                                            <input type="hidden" id="harga" value="<?= $harga[0]->perMeter ?>">
+                                            <div class="edit" id="edit-harga">
+                                                <i class="fa-solid fa-pen-to-square"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -465,11 +472,11 @@
                                             
                                             if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
                                         ?>
-                                        <img src="<?= base_url('assets/foto/'. $media_project[1]->file_media .'') ?>" alt="s">
+                                        <img class="foto2" src="<?= base_url('assets/foto/'. $media_project[1]->file_media .'') ?>" alt="s">
                                         <?php
                                             }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
                                         ?> 
-                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[1]->file_media .'') ?>" controls alt="s"></video>
+                                        <video class="foto2" src="<?= base_url('assets/foto/'. $media_project[1]->file_media .'') ?>" controls alt="s"></video>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -482,11 +489,11 @@
                                             
                                             if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
                                         ?>
-                                        <img src="<?= base_url('assets/foto/'. $media_project[2]->file_media .'') ?>" alt="s">
+                                        <img class="foto3" src="<?= base_url('assets/foto/'. $media_project[2]->file_media .'') ?>" alt="s">
                                         <?php
                                             }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
                                         ?> 
-                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[2]->file_media .'') ?>" controls alt="s"></video>
+                                        <video class="foto3" class="" src="<?= base_url('assets/foto/'. $media_project[2]->file_media .'') ?>" controls alt="s"></video>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -499,11 +506,11 @@
                                             
                                             if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
                                         ?>
-                                        <img src="<?= base_url('assets/foto/'. $media_project[3]->file_media .'') ?>" alt="s">
+                                        <img class="foto4" src="<?= base_url('assets/foto/'. $media_project[3]->file_media .'') ?>" alt="s">
                                         <?php
                                             }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
                                         ?> 
-                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[3]->file_media .'') ?>" controls alt="s"></video>
+                                        <video class="foto4" class="" src="<?= base_url('assets/foto/'. $media_project[3]->file_media .'') ?>" controls alt="s"></video>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -516,11 +523,11 @@
                                             
                                             if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
                                         ?>
-                                        <img src="<?= base_url('assets/foto/'. $media_project[4]->file_media .'') ?>" alt="s">
+                                        <img class="foto5" src="<?= base_url('assets/foto/'. $media_project[4]->file_media .'') ?>" alt="s">
                                         <?php
                                             }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
                                         ?> 
-                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[4]->file_media .'') ?>" controls alt="s"></video>
+                                        <video class="foto5" src="<?= base_url('assets/foto/'. $media_project[4]->file_media .'') ?>" controls alt="s"></video>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -533,11 +540,11 @@
                                             
                                             if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
                                         ?>
-                                        <img src="<?= base_url('assets/foto/'. $media_project[5]->file_media .'') ?>" alt="s">
+                                        <img class="foto6" src="<?= base_url('assets/foto/'. $media_project[5]->file_media .'') ?>" alt="s">
                                         <?php
                                             }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
                                         ?> 
-                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[5]->file_media .'') ?>" controls alt="s"></video>
+                                        <video class="foto6" src="<?= base_url('assets/foto/'. $media_project[5]->file_media .'') ?>" controls alt="s"></video>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -550,11 +557,11 @@
                                             
                                             if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
                                         ?>
-                                        <img src="<?= base_url('assets/foto/'. $media_project[6]->file_media .'') ?>" alt="s">
+                                        <img class="foto7" src="<?= base_url('assets/foto/'. $media_project[6]->file_media .'') ?>" alt="s">
                                         <?php
                                             }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
                                         ?> 
-                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[6]->file_media .'') ?>" controls alt="s"></video>
+                                        <video class="foto7" src="<?= base_url('assets/foto/'. $media_project[6]->file_media .'') ?>" controls alt="s"></video>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -567,12 +574,109 @@
                                             
                                             if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
                                         ?>
-                                        <img src="<?= base_url('assets/foto/'. $media_project[7]->file_media .'') ?>" alt="s">
+                                        <img class="foto8" src="<?= base_url('assets/foto/'. $media_project[7]->file_media .'') ?>" alt="s">
                                         <?php
                                             }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
                                         ?> 
-                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[7]->file_media .'') ?>" controls alt="s"></video>
+                                        <video class="foto8" src="<?= base_url('assets/foto/'. $media_project[7]->file_media .'') ?>" controls alt="s"></video>
                                         <?php } ?>
+                                    </div>
+                                </div>
+                                <div id="menu-legal" class="row mt-4">
+                                    <div class="col-12 row">
+                                        <div class="col-12 judul-menu">
+                                            <h2>Legal</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row isi">
+                                        <div class="col-12">
+                                            <p class="afterSubLegal"><?= $sub_legal[0]->isi_sub_legal ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 row foto-legal boxs-project">
+                                        <img class="mx-auto img-fluid" src="<?= base_url('assets/foto/WhatsApp Image 2022-08-29 at 17.13.39.jpeg') ?>" alt="">
+                                    </div>
+                                </div>
+                                <div id="menu-kalkulasi" class="row mt-5 menu-kalkulasi">
+                                    <div class="col-12 row">
+                                        <div class="col-12 judul-menu">
+                                            <h2>Kalkulasi Estimasi Biaya</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row isi">
+                                        <div class="col-12">
+                                            <p>Masukan ukuran (meter) yang ingin di kalkulasi...</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 row mt-3">
+                                        <div class="row isi">
+                                            <div class="col-10">
+                                            <div class="form-group">
+                                                <input type="hidden" id="per-meter" value="100000">
+                                                <input type="number" class="form-control" id="meter" aria-describedby="emailHelp" placeholder="Masukan Ukuran">
+                                            </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="m1">
+                                                    <p>Meter</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row isi">
+                                            <div class="col-12">
+                                            <p class="total">Estimasi: Rp. <span id="total">0</span>,-</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu-kontak" class="row mt-3">
+                                    <div class="col-12 row">
+                                        <div class="col-12 judul-menu">
+                                            <h2>Kontak</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row isi">
+                                        <div class="col-12">
+                                            <p>Tertarik? Segera hubungi kami...</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 row mt-3">
+                                        <div class="row isi">
+                                            <div class="col-12">
+                                            <form>
+                                            <div class="form-group">
+                                                <label for="formGroupExampleInput">Masukan Nama</label>
+                                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="formGroupExampleInput">Email</label>
+                                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="formGroupExampleInput">No WhatsApp</label>
+                                                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="no whatsapp">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="formGroupExampleInput">Pesan</label>
+                                                <textarea name="" id="" class="form-control" cols="40" rows="6"></textarea>
+                                            </div>
+                                            <button class="btn btn-kirim">Kirim</button>
+                                            </form>
+                                            </div>
+                                        </div>
+                                        <div class="row isi mt-3">
+                                            <div class="col-12">
+                                            <p class="total">Atau Hubungi kontak kami:</p>
+                                            </div>
+                                        </div>
+                                        <div class="row isi kontaks">
+                                            <div class="col">
+                                                <a href="https://api.whatsapp.com/send/?phone=62895610000966&text&type=phone_number&app_absent=0"><i class="fa-brands fa-whatsapp"></i></a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="https://www.instagram.com/rumah.rasya/?hl=id"><i class="fa-brands fa-instagram"></i></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -636,6 +740,25 @@
                         </div>
                         <div class="form-group"> 
                             <input type="file" id="mediaProject" name="mediaProject" size="33" accept="image/png, image/gif, image/jpeg, video/mp4" onchange="previewMedia(this);" />
+                        </div>
+                        <button class="btn btn-primary">Simpan</button>
+                    </form>
+                    <form method="POST" action="<?= base_url('Admin/ubah_subLegal') ?>" class="sub-legal-form">
+                        <div class="form-group">
+                            <label>Tuliskan isi</label>
+                        </div>
+                        <div class="form-group"> 
+                            <textarea name="isi" id="isi-subLegal" class="isi-subLegal" cols="30" rows="10"></textarea>
+                        </div>
+                        <button class="btn btn-primary">Simpan</button>
+                    </form>
+                    <form method="POST" action="<?= base_url('Admin/ubah_harga') ?>" class="harga-form">
+                        <div class="form-group">
+                            <label>Harga Per meter</label>
+                        </div>
+                        <div class="form-group"> 
+                            <input type="number" name="perMeter" id="perMeter">
+                            <label class="hargaRp" for="">Rp. </label>
                         </div>
                         <button class="btn btn-primary">Simpan</button>
                     </form>

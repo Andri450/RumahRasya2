@@ -19,6 +19,12 @@ class M_data extends CI_Model{
     function ambil_media_project(){
         return $this->db->get('media_project');
     }
+    function ambil_sub_legal(){
+        return $this->db->get('sub_legal');
+    }
+    function ambil_harga(){
+        return $this->db->get('estimasi');
+    }
 
     function ubah_sub_judul($isi){
         $dats = array(
@@ -96,6 +102,36 @@ class M_data extends CI_Model{
 
         $this->db->where($wh);
         $this->db->update('media_project', $dats);
+    }
+
+    function ubah_subLegal($isi){
+        $dats = array(
+            'isi_sub_legal' => $isi,
+        );
+
+        $wh = array(
+            'id' => 1,
+        );
+
+        $this->db->where($wh);
+        $this->db->update('sub_legal', $dats);
+    }
+
+    function ubah_harga($harga){
+        $dats = array(
+            'perMeter' => $harga,
+        );
+
+        $wh = array(
+            'id' => 1,
+        );
+
+        $this->db->where($wh);
+        $this->db->update('estimasi', $dats);
+    }
+
+    function upload_feedback($dats){
+        $this->db->insert('feedback',$dats);
     }
 
 }

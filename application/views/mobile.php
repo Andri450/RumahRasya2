@@ -224,22 +224,22 @@
             <div class="col-12 row mt-3">
                 <div class="row isi">
                     <div class="col-12">
-                    <form>
+                    <form method="POST" action="<?= base_url('Mobile/upload_feedback') ?>">
                     <div class="form-group">
                         <label for="formGroupExampleInput">Masukan Nama</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama">
+                        <input type="text" name="nama" class="form-control" id="formGroupExampleInput" placeholder="Nama">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Email</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email">
+                        <input type="text" name="email" class="form-control" id="formGroupExampleInput" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">No WhatsApp</label>
-                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="no whatsapp">
+                        <input type="number" name="wa" class="form-control" id="formGroupExampleInput" placeholder="no whatsapp">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Pesan</label>
-                        <textarea name="" id="" class="form-control" cols="40" rows="6"></textarea>
+                        <textarea name="pesan" id="" class="form-control" cols="40" rows="6"></textarea>
                     </div>
                     <button class="btn btn-kirim">Kirim</button>
                     </form>
@@ -256,6 +256,16 @@
                     </div>
                     <div class="col">
                         <a href="https://www.instagram.com/rumah.rasya/?hl=id"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 row mt-5 mapBox">
+                    <div class="col-12 judul-menu">
+                        <h2>Lokasi</h2>
+                    </div>
+                    <div class="col">
+                        <div class="iframe-container map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.26074538116563!2d105.24413607599782!3d-5.39075081818087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5c41bbd30b0445af!2zNcKwMjMnMjYuNSJTIDEwNcKwMTQnMzkuNCJF!5e0!3m2!1sid!2sid!4v1661850241615!5m2!1sid!2sid" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
