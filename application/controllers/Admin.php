@@ -48,4 +48,60 @@ class Admin extends CI_Controller {
 		$this->m_data->ubah_sub_judul($isi);
 		redirect('Admin');
 	}
+
+	public function ubah_fotoHeader(){
+		$id = $this->input->post('idHeading');
+		
+		$this->load->helper('form');
+
+		$config['upload_path'] = './assets/foto/';
+        $config['allowed_types'] = 'gif|jpg|png';
+		$image = $_FILES['foto']['tmp_name'];
+
+		$this->load->library('upload', $config);
+		$nama = './assets/foto/' . $_FILES['foto']['name'];
+
+        if (move_uploaded_file($image,$nama)) {
+            $namaFoto = $_FILES['foto']['name'];
+			$this->m_data->ubah_fotoHeader($namaFoto, $id);
+			redirect('Admin');
+        } else {
+			$error = array('error' => $this->upload->display_errors());
+            var_dump($error);
+        }
+	}
+
+	public function ubah_isiHeader(){
+		$isi = $this->input->post('isi');
+		$this->m_data->ubah_isi_header($isi);
+		redirect('Admin');
+	}
+
+	public function ubah_subProject(){
+		$isi = $this->input->post('isi');
+		$this->m_data->ubah_subProject($isi);
+		redirect('Admin');
+	}
+
+	public function ubah_mediaProject(){
+		$id = $this->input->post('idMedia');
+		
+		$this->load->helper('form');
+
+		$config['upload_path'] = './assets/foto/';
+        $config['allowed_types'] = 'gif|jpg|png';
+		$image = $_FILES['mediaProject']['tmp_name'];
+
+		$this->load->library('upload', $config);
+		$nama = './assets/foto/' . $_FILES['mediaProject']['name'];
+
+        if (move_uploaded_file($image,$nama)) {
+            $namaFoto = $_FILES['mediaProject']['name'];
+			$this->m_data->ubah_mediaProject($namaFoto, $id);
+			redirect('Admin');
+        } else {
+			$error = array('error' => $this->upload->display_errors());
+            var_dump($error);
+        }
+	}
 }

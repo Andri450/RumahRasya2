@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="row isi mt-3">
-                            <p>"<?= $isi_heading[0]->isi ?>"</p>
+                            <p class="isi-header-prev"><?= $isi_heading[0]->isi ?></p>
                             <div class="edit" id="edit-bawah-carousel">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </div>
@@ -99,7 +99,7 @@
                             </div>
                             <div class="row isi">
                                 <div class="col-12">
-                                    <p><?= $sub_judul_project[0]->isi ?></p>
+                                    <p class="isi-sub-project"><?= $sub_judul_project[0]->isi ?></p>
                                 </div>
                                 <div class="edit" id="edit-subProject">
                                     <i class="fa-solid fa-pen-to-square"></i>
@@ -400,15 +400,18 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[0]->foto .'') ?>" alt="First slide">
+                                    <input type="hidden" id="tmp-header1" src="<?= base_url('assets/foto/'. $foto_heading[0]->foto .'') ?>">
+                                    <img id="img-header1" class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[0]->foto .'') ?>" alt="First slide">
                                 </div>
                                 
                                 <div class="carousel-item">
-                                    <img class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[1]->foto .'') ?>" alt="Second slide">
+                                    <input type="hidden" id="tmp-header2" src="<?= base_url('assets/foto/'. $foto_heading[1]->foto .'') ?>">
+                                    <img id="img-header2" class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[1]->foto .'') ?>" alt="Second slide">
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[2]->foto .'') ?>" alt="Third slide">
+                                    <input type="hidden" id="tmp-header3" src="<?= base_url('assets/foto/'. $foto_heading[2]->foto .'') ?>">
+                                    <img id="img-header3" class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[2]->foto .'') ?>" alt="Third slide">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -422,7 +425,7 @@
                             </div>
                         </div>
                         <div class="row isi mt-3">
-                            <p>"<?= $isi_heading[0]->isi ?>"</p>
+                            <p class="afterHeader"><?= $isi_heading[0]->isi ?></p>
                         </div>
                         <div id="menu-project" class="row mt-4">
                             <div class="col-12 row">
@@ -432,7 +435,7 @@
                             </div>
                             <div class="row isi">
                                 <div class="col-12">
-                                    <p><?= $sub_judul_project[0]->isi ?></p>
+                                    <p class="afterSubProject"><?= $sub_judul_project[0]->isi ?></p>
                                 </div>
                             </div>
                             <div class="col-12 row boxs-project mt-3">
@@ -445,11 +448,11 @@
                                             
                                             if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
                                         ?>
-                                        <img src="<?= base_url('assets/foto/'. $media_project[0]->file_media .'') ?>" alt="s">
+                                        <img class="foto1" src="<?= base_url('assets/foto/'. $media_project[0]->file_media .'') ?>" alt="s">
                                         <?php
                                             }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
                                         ?> 
-                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[0]->file_media .'') ?>" controls alt="s"></video>
+                                        <video class="foto1" src="<?= base_url('assets/foto/'. $media_project[0]->file_media .'') ?>" controls alt="s"></video>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -595,6 +598,44 @@
                         </div>
                         <div class="form-group"> 
                             <textarea class="isi-sub-judul" name="isi" id="isi-sub-judul" cols="30" rows="10"></textarea>
+                        </div>
+                        <button class="btn btn-primary">Simpan</button>
+                    </form>
+                    <form method="POST" action="<?= base_url('Admin/ubah_fotoHeader') ?>" class="edit-fotoHeader-form" enctype="multipart/form-data">
+                        <input type="hidden" id="idheading" name="idHeading">
+                        <div class="form-group">
+                            <label>Upload Foto Heading <span class="headingKe"></span></label>
+                        </div>
+                        <div class="form-group"> 
+                            <input type="file" id="input-header" name="foto" size="33" accept="image/png, image/gif, image/jpeg" onchange="previewHeading(this);" />
+                        </div>
+                        <button class="btn btn-primary">Simpan</button>
+                    </form>
+                    <form method="POST" action="<?= base_url('Admin/ubah_isiHeader') ?>" class="isi-header-form">
+                        <div class="form-group">
+                            <label>Tuliskan isi</label>
+                        </div>
+                        <div class="form-group"> 
+                            <textarea name="isi" id="isi-header" class="isi-header" cols="30" rows="10"></textarea>
+                        </div>
+                        <button class="btn btn-primary">Simpan</button>
+                    </form>
+                    <form method="POST" action="<?= base_url('Admin/ubah_subProject') ?>" class="sub-project-form">
+                        <div class="form-group">
+                            <label>Tuliskan isi</label>
+                        </div>
+                        <div class="form-group"> 
+                            <textarea name="isi" id="isi-project" class="isi-project" cols="30" rows="10"></textarea>
+                        </div>
+                        <button class="btn btn-primary">Simpan</button>
+                    </form>
+                    <form method="POST" action="<?= base_url('Admin/ubah_mediaProject') ?>" class="edit-mediaProject-form" enctype="multipart/form-data">
+                        <input type="hidden" id="idMedia" name="idMedia">
+                        <div class="form-group">
+                            <label>Upload Foto Media <span class="mediaKe"></span></label>
+                        </div>
+                        <div class="form-group"> 
+                            <input type="file" id="mediaProject" name="mediaProject" size="33" accept="image/png, image/gif, image/jpeg, video/mp4" onchange="previewMedia(this);" />
                         </div>
                         <button class="btn btn-primary">Simpan</button>
                     </form>

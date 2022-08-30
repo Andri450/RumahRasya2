@@ -5,7 +5,6 @@
 }
 
 .bungkus-mobile2{
-    display: none;;
     overflow: auto;
     height: 600px;
     width: 414px;
@@ -52,6 +51,26 @@
 }
 
 .edit-logo-form{
+    margin-top: 40px;
+    display: none;
+}
+
+.edit-fotoHeader-form{
+    margin-top: 40px;
+    display: none;
+}
+
+.isi-header-form{
+    margin-top: 40px;
+    display: none;
+}
+
+.sub-project-form{
+    margin-top: 40px;
+    display: none;
+}
+
+.edit-mediaProject-form{
     margin-top: 40px;
     display: none;
 }

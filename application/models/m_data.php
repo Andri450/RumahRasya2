@@ -45,6 +45,59 @@ class M_data extends CI_Model{
         $this->db->where($wh);
         $this->db->update('logo', $dats);
     }
+
+    function ubah_fotoHeader($file, $id){
+        $dats = array(
+            'foto' => $file,
+        );
+
+        $wh = array(
+            'id_heading' => $id,
+        );
+
+        $this->db->where($wh);
+        $this->db->update('foto_heading', $dats);
+    }
+
+    function ubah_isi_header($isi){
+        $dats = array(
+            'isi' => $isi,
+        );
+
+        $wh = array(
+            'id' => 1,
+        );
+
+        $this->db->where($wh);
+        $this->db->update('isi_heading', $dats);
+    }
+
+    function ubah_subProject($isi){
+        $dats = array(
+            'isi' => $isi,
+        );
+
+        $wh = array(
+            'id' => 1,
+        );
+
+        $this->db->where($wh);
+        $this->db->update('sub_judul_project', $dats);
+    }
+
+    function ubah_mediaProject($media, $id){
+        $dats = array(
+            'file_media' => $media,
+        );
+
+        $wh = array(
+            'id_media' => $id,
+        );
+
+        $this->db->where($wh);
+        $this->db->update('media_project', $dats);
+    }
+
 }
 
 ?>
