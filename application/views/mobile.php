@@ -163,6 +163,108 @@
                 
             </div>
         </div>
+        <div id="menu-legal" class="row mt-4">
+            <div class="col-12 row">
+                <div class="col-12 judul-menu">
+                    <h2>Legal</h2>
+                </div>
+            </div>
+            <div class="row isi">
+                <div class="col-12">
+                    <p>Perizinan Usaha Kami...</p>
+                </div>
+            </div>
+            <div class="col-12 row foto-legal boxs-project">
+                <img class="mx-auto img-fluid" src="<?= base_url('assets/foto/WhatsApp Image 2022-08-29 at 17.13.39.jpeg') ?>" alt="">
+            </div>
+        </div>
+        <div id="menu-kalkulasi" class="row mt-5 menu-kalkulasi">
+            <div class="col-12 row">
+                <div class="col-12 judul-menu">
+                    <h2>Kalkulasi Estimasi Biaya</h2>
+                </div>
+            </div>
+            <div class="row isi">
+                <div class="col-12">
+                    <p>Masukan ukuran (meter) yang ingin di kalkulasi...</p>
+                </div>
+            </div>
+            <div class="col-12 row mt-3">
+                <div class="row isi">
+                    <div class="col-10">
+                    <div class="form-group">
+                        <input type="hidden" id="per-meter" value="100000">
+                        <input type="number" class="form-control" id="meter" aria-describedby="emailHelp" placeholder="Masukan Ukuran">
+                    </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="m1">
+                            <p>Meter</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row isi">
+                    <div class="col-12">
+                    <p class="total">Estimasi: Rp. <span id="total">0</span>,-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="menu-kontak" class="row mt-3">
+            <div class="col-12 row">
+                <div class="col-12 judul-menu">
+                    <h2>Kontak</h2>
+                </div>
+            </div>
+            <div class="row isi">
+                <div class="col-12">
+                    <p>Tertarik? Segera hubungi kami...</p>
+                </div>
+            </div>
+            <div class="col-12 row mt-3">
+                <div class="row isi">
+                    <div class="col-12">
+                    <form>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Masukan Nama</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Email</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">No WhatsApp</label>
+                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="no whatsapp">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Pesan</label>
+                        <textarea name="" id="" class="form-control" cols="40" rows="6"></textarea>
+                    </div>
+                    <button class="btn btn-kirim">Kirim</button>
+                    </form>
+                    </div>
+                </div>
+                <div class="row isi mt-3">
+                    <div class="col-12">
+                    <p class="total">Atau Hubungi kontak kami:</p>
+                    </div>
+                </div>
+                <div class="row isi kontaks">
+                    <div class="col">
+                        <a href="https://api.whatsapp.com/send/?phone=62895610000966&text&type=phone_number&app_absent=0"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div class="col">
+                        <a href="https://www.instagram.com/rumah.rasya/?hl=id"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row foot mt-3">
+            <div class="col-12">
+                <p>RumahRasya.id © All Rights Reserved</p>
+            </div>
+        </div>
     </div>  
 </body>
 </html>

@@ -182,19 +182,21 @@ video {
     object-fit: cover;
     height: 200px;
     width: 100%;
+    padding: 5px;
 }
 
 .foto > img{
     object-fit: cover;
     height: 200px;
     width: 100%;
+    padding: 5px;
 }
 
 .isi{
     margin-top: 0px;
     margin-left: 20px;
     margin-right: 20px;
-    text-align: justify;
+    text-align: left;
 }
 
 .judul-menu {
@@ -220,4 +222,34 @@ video {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
+}
+
+.btn-kirim{
+    background-color: #333333;
+    color: white;
+}
+
+.kontaks{
+    font-size: 30px;
+}
+
+.kontaks a{
+    color: #333333;
+}
+
+.foot{
+    padding-top: 20px;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+}
+
+.foot > p{
+    text-align: center;
+}
+
+.menu-kalkulasi{
+    background-color: #333333;
+    padding: 20px;
+    color: white;
 }

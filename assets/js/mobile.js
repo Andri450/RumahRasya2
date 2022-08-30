@@ -61,19 +61,48 @@ $(document).ready(function(){
         e.preventDefault();
         resetAktif();
         $(this).addClass('aktif');
+        $('html, body').animate({
+            scrollTop: $("#menu-legal").offset().top
+        }, 1000);
+    });
+
+    $('#kalkulasi').click(function(e) {
+        e.preventDefault();
+        resetAktif();
+        $(this).addClass('aktif');
+        $('html, body').animate({
+            scrollTop: $("#menu-kalkulasi").offset().top
+        }, 1000);
     });
 
     $('#kontak').click(function(e) {
         e.preventDefault();
         resetAktif();
         $(this).addClass('aktif');
+        $('html, body').animate({
+            scrollTop: $("#menu-kontak").offset().top
+        }, 1000);
     });
+
+    // $('#legal').click(function(e) {
+    //     e.preventDefault();
+    //     resetAktif();
+    //     $(this).addClass('aktif');
+    // });
+
+    // $('#kontak').click(function(e) {
+    //     e.preventDefault();
+    //     resetAktif();
+    //     $(this).addClass('aktif');
+    // });
 
     function resetAktif(){
         $('#home').removeClass('aktif');
         $('#project').removeClass('aktif');
         $('#legal').removeClass('aktif');
+        $('#kalkulasi').removeClass('aktif');
         $('#kontak').removeClass('aktif');
+        $('#legal').removeClass('aktif');
     }
 
     // $("#carouselExampleIndicators").click( function() {
@@ -103,5 +132,34 @@ $(document).ready(function(){
             }
         });
     });
+
+    $('#meter').on('input propertychange paste', function(){
+        var input = this.value;
+        var perM = $('#per-meter').val();
+        var total = input * perM;
+        var hasil = rp(total);
+        $('#total').html(hasil);
+        console.log(hasil);
+    });
+
+    function rp(num){
+        var str = num.toString().replace("", ""), parts = false, output = [], i = 1, formatted = null;
+        if(str.indexOf(".") > 0) {
+          parts = str.split(".");
+          str = parts[0];
+        }
+        str = str.split("").reverse();
+        for(var j = 0, len = str.length; j < len; j++) {
+          if(str[j] != ",") {
+            output.push(str[j]);
+            if(i%3 == 0 && j < (len - 1)) {
+              output.push(",");
+            }
+            i++;
+          }
+        }
+        formatted = output.reverse().join("");
+        return("" + formatted + ((parts) ? "." + parts[1].substr(0, 2) : ""));
+      };
 
 });

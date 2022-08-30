@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous"/>
     <link rel="stylesheet" href="<?= base_url('assets/css/mobile.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/admin.css') ?>">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -29,8 +30,11 @@
                     <div class="container-fluid">
                         <div id="menu-home" class="row logo">
                             <div class="col p-0">
+                                <div class="edit" id="edit-logo">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </div>
                                 <div class="boxLogo">
-                                    <img src="<?= base_url('assets/foto/logo.jpg') ?>" alt="Logo">
+                                    <img src="<?= base_url('assets/foto/'. $logo[0]->logo .'') ?>" alt="Logo">
                                 </div>
                             </div>
                             <div class="col-4">
@@ -43,24 +47,32 @@
                             <h1>Rumah Rasya</h1><hr>
                         </div>
                         <div class="row subJudul">
-                            <h2>Desain Dan Pengerjaan Interior Dan Eksterior Rumah</h2>
+                            <h2><?= $sub_judul[0]->isi ?></h2>
+                            <div class="edit" id="edit-subJudul">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </div>
                         </div>
                         <div class="row fotoAtas mt-4">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
+                                <div class="edit" id="edit-carousel">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </div>
                                 <div class="carousel-item active">
-                                <img class="d-block" src="<?= base_url('assets/foto/rum.jpg') ?>" alt="First slide">
+                                    <img class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[0]->foto .'') ?>" alt="First slide">
                                 </div>
+                                
                                 <div class="carousel-item">
-                                <img class="d-block" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="Second slide">
+                                    <img class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[1]->foto .'') ?>" alt="Second slide">
                                 </div>
+
                                 <div class="carousel-item">
-                                <img class="d-block" src="<?= base_url('assets/foto/img3.jpg') ?>" alt="Third slide">
+                                    <img class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[2]->foto .'') ?>" alt="Third slide">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -74,7 +86,10 @@
                             </div>
                         </div>
                         <div class="row isi mt-3">
-                            <p>"Jasa Desain Dan Pengerjaan Interior Dan Eksterior Rumah Terbaik Di Lampung, Kami Memperkerjakan pekerja Profesional Yang Berpengalaman di Bidangnya"</p>
+                            <p>"<?= $isi_heading[0]->isi ?>"</p>
+                            <div class="edit" id="edit-bawah-carousel">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </div>
                         </div>
                         <div id="menu-project" class="row mt-4">
                             <div class="col-12 row">
@@ -84,48 +99,477 @@
                             </div>
                             <div class="row isi">
                                 <div class="col-12">
-                                    <p>Berikut Before After Dari Pekerjaan Kami...</p>
+                                    <p><?= $sub_judul_project[0]->isi ?></p>
+                                </div>
+                                <div class="edit" id="edit-subProject">
+                                    <i class="fa-solid fa-pen-to-square"></i>
                                 </div>
                             </div>
                             <div class="col-12 row boxs-project mt-3">
                                 <div class="col-6 ">
                                     <div class="row foto">
-                                        <video class="" src="<?= base_url('assets/foto/vid.mp4') ?>" controls alt="s"></video>
+                                        <?php
+                                            $file = $media_project[0]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[0]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[0]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                        <div class="edit" id="edit-media1">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-6 ">
                                     <div class="row foto">
-                                    <img class="" src="<?= base_url('assets/foto/6d6c27bc-5501-4120-bf49-39a5820f7acf.JPG') ?>" alt="s"> 
+                                    <?php
+                                            $file = $media_project[1]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[1]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[1]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?> 
+                                        <div class="edit" id="edit-media2">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="row foto">
-                                    <img src="<?= base_url('assets/foto/rum.jpg') ?>" alt="s"> 
+                                    <?php
+                                            $file = $media_project[2]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[2]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[2]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                        <div class="edit" id="edit-media3">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-6 ">
                                     <div class="row foto">
-                                    <img class="" src="<?= base_url('assets/foto/5040edb4-c8b0-46db-89ed-e75d4c43e651.JPG') ?>" alt="s"> 
+                                    <?php
+                                            $file = $media_project[3]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[3]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[3]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?> 
+                                        <div class="edit" id="edit-media4">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-6 ">
                                     <div class="row foto">
-                                        <img src="<?= base_url('assets/foto/09ff3b5b-cb88-4419-b687-fe407325d7f7 (2).JPG') ?>" alt="s">
+                                    <?php
+                                            $file = $media_project[4]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[4]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[4]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                        <div class="edit" id="edit-media5">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="row foto">
-                                        <video class="" src="<?= base_url('assets/foto/vid2.mp4') ?>" controls alt="s"></video>
+                                    <?php
+                                            $file = $media_project[5]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[5]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[5]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                        <div class="edit" id="edit-media6">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-6 ">
                                     <div class="row foto">
-                                    <img class="" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="s"> 
+                                    <?php
+                                            $file = $media_project[6]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[6]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[6]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                        <div class="edit" id="edit-media7">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-6 ">
                                     <div class="row foto">
-                                        <img src="<?= base_url('assets/foto/09ff3b5b-cb88-4419-b687-fe407325d7f7 (2).JPG') ?>" alt="s">
+                                    <?php
+                                            $file = $media_project[7]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[7]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[7]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                        <div class="edit" id="edit-media8">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu-legal" class="row mt-4">
+                                    <div class="col-12 row">
+                                        <div class="col-12 judul-menu">
+                                            <h2>Legal</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row isi">
+                                        <div class="col-12">
+                                            <p>Perizinan Usaha Kami...</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 row foto-legal boxs-project">
+                                        <img class="mx-auto img-fluid" src="<?= base_url('assets/foto/WhatsApp Image 2022-08-29 at 17.13.39.jpeg') ?>" alt="">
+                                    </div>
+                                </div>
+                                <div id="menu-kalkulasi" class="row mt-5 menu-kalkulasi">
+                                    <div class="col-12 row">
+                                        <div class="col-12 judul-menu">
+                                            <h2>Kalkulasi Estimasi Biaya</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row isi">
+                                        <div class="col-12">
+                                            <p>Masukan ukuran (meter) yang ingin di kalkulasi...</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 row mt-3">
+                                        <div class="row isi">
+                                            <div class="col-10">
+                                            <div class="form-group">
+                                                <input type="hidden" id="per-meter" value="100000">
+                                                <input type="number" class="form-control" id="meter" aria-describedby="emailHelp" placeholder="Masukan Ukuran">
+                                            </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="m1">
+                                                    <p>Meter</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row isi">
+                                            <div class="col-12">
+                                            <p class="total">Estimasi: Rp. <span id="total">0</span>,-</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu-kontak" class="row mt-3">
+                                    <div class="col-12 row">
+                                        <div class="col-12 judul-menu">
+                                            <h2>Kontak</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row isi">
+                                        <div class="col-12">
+                                            <p>Tertarik? Segera hubungi kami...</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 row mt-3">
+                                        <div class="row isi">
+                                            <div class="col-12">
+                                            <form>
+                                            <div class="form-group">
+                                                <label for="formGroupExampleInput">Masukan Nama</label>
+                                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="formGroupExampleInput">Email</label>
+                                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="formGroupExampleInput">No WhatsApp</label>
+                                                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="no whatsapp">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="formGroupExampleInput">Pesan</label>
+                                                <textarea name="" id="" class="form-control" cols="40" rows="6"></textarea>
+                                            </div>
+                                            <button class="btn btn-kirim">Kirim</button>
+                                            </form>
+                                            </div>
+                                        </div>
+                                        <div class="row isi mt-3">
+                                            <div class="col-12">
+                                            <p class="total">Atau Hubungi kontak kami:</p>
+                                            </div>
+                                        </div>
+                                        <div class="row isi kontaks">
+                                            <div class="col">
+                                                <a href="https://api.whatsapp.com/send/?phone=62895610000966&text&type=phone_number&app_absent=0"><i class="fa-brands fa-whatsapp"></i></a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="https://www.instagram.com/rumah.rasya/?hl=id"><i class="fa-brands fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="bungkus-mobile2">
+                <div class="penanda">Preview</div>
+                <div class="container-fluid">
+                        <div id="menu-home" class="row logo">
+                            <div class="col p-0">
+                                <div class="boxLogo">
+                                    <img id="preview-logo" src="<?= base_url('assets/foto/'. $logo[0]->logo .'') ?>" alt="Logo">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div id="tombol-menu" class="tombol-menu p-3 animate__animated animate__backInDown noClose">
+                                    <i class="fa-solid fa-bars noClose"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row judul">
+                            <h1>Rumah Rasya</h1><hr>
+                        </div>
+                        <div class="row subJudul afterSubJudul">
+                            <h2><?= $sub_judul[0]->isi ?></h2>
+                        </div>
+                        <div class="row fotoAtas mt-4">
+                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[0]->foto .'') ?>" alt="First slide">
+                                </div>
+                                
+                                <div class="carousel-item">
+                                    <img class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[1]->foto .'') ?>" alt="Second slide">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img class="d-block" src="<?= base_url('assets/foto/'. $foto_heading[2]->foto .'') ?>" alt="Third slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            </div>
+                        </div>
+                        <div class="row isi mt-3">
+                            <p>"<?= $isi_heading[0]->isi ?>"</p>
+                        </div>
+                        <div id="menu-project" class="row mt-4">
+                            <div class="col-12 row">
+                                <div class="col-12 judul-menu">
+                                    <h2>Project</h2>
+                                </div>
+                            </div>
+                            <div class="row isi">
+                                <div class="col-12">
+                                    <p><?= $sub_judul_project[0]->isi ?></p>
+                                </div>
+                            </div>
+                            <div class="col-12 row boxs-project mt-3">
+                                <div class="col-6 ">
+                                    <div class="row foto">
+                                        <?php
+                                            $file = $media_project[0]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[0]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[0]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="row foto">
+                                    <?php
+                                            $file = $media_project[1]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[1]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[1]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row foto">
+                                    <?php
+                                            $file = $media_project[2]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[2]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[2]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="row foto">
+                                    <?php
+                                            $file = $media_project[3]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[3]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[3]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="row foto">
+                                    <?php
+                                            $file = $media_project[4]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[4]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[4]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row foto">
+                                    <?php
+                                            $file = $media_project[5]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[5]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[5]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="row foto">
+                                    <?php
+                                            $file = $media_project[6]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[6]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[6]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="row foto">
+                                    <?php
+                                            $file = $media_project[7]->file_media;
+                                            $info = pathinfo($file);
+                                            $ekstensi = $info['extension'];
+                                            
+                                            if(strtoupper($ekstensi) == strtoupper('jpg') || strtoupper($ekstensi) == strtoupper('jpeg') || strtoupper($ekstensi) == strtoupper('png')){
+                                        ?>
+                                        <img src="<?= base_url('assets/foto/'. $media_project[7]->file_media .'') ?>" alt="s">
+                                        <?php
+                                            }elseif(strtoupper($ekstensi) == strtoupper('mp4')){
+                                        ?> 
+                                        <video class="" src="<?= base_url('assets/foto/'. $media_project[7]->file_media .'') ?>" controls alt="s"></video>
+                                        <?php } ?>
                                     </div>
                                 </div>
                                 
@@ -135,130 +579,28 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="bungkus-mobile2">
-                    <div class="container-fluid">
-                        <div id="menu-home" class="row logo">
-                            <div class="col p-0">
-                                <div class="boxLogo">
-                                    <img src="<?= base_url('assets/foto/logo.jpg') ?>" alt="Logo">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div id="tombol-menu" class="tombol-menu p-3 animate__animated animate__backInDown noClose">
-                                    <i class="fa-solid fa-bars noClose"></i>
-                                </div>
-                            </div>
+                <div class="row">
+                    <form method="POST" action="<?= base_url('Admin/ubah_logo') ?>" class="edit-logo-form" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Upload File Logo</label>
                         </div>
-                        <div class="row judul">
-                            <h1>Rumah Rasya</h1><hr>
+                        <div class="form-group"> 
+                            <input type="file" id="input-logo" name="foto" size="33" accept="image/png, image/gif, image/jpeg" onchange="previewFile(this);" />
                         </div>
-                        <div class="row subJudul">
-                            <h2>Desain Dan Pengerjaan Interior Dan Eksterior Rumah</h2>
+                        <button class="btn btn-primary">Simpan</button>
+                    </form>
+                    <form method="POST" action="<?= base_url('Admin/ubah_sub_judul') ?>" class="sub-Judul-form">
+                        <div class="form-group">
+                            <label>Tuliskan isi</label>
                         </div>
-                        <div class="row fotoAtas mt-4">
-                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                <img class="d-block" src="<?= base_url('assets/foto/rum.jpg') ?>" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                <img class="d-block" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                <img class="d-block" src="<?= base_url('assets/foto/img3.jpg') ?>" alt="Third slide">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                            </div>
+                        <div class="form-group"> 
+                            <textarea class="isi-sub-judul" name="isi" id="isi-sub-judul" cols="30" rows="10"></textarea>
                         </div>
-                        <div class="row isi mt-3">
-                            <p>"Jasa Desain Dan Pengerjaan Interior Dan Eksterior Rumah Terbaik Di Lampung, Kami Memperkerjakan pekerja Profesional Yang Berpengalaman di Bidangnya"</p>
-                        </div>
-                        <div id="menu-project" class="row mt-4">
-                            <div class="col-12 row">
-                                <div class="col-12 judul-menu">
-                                    <h2>Project</h2>
-                                </div>
-                            </div>
-                            <div class="row isi">
-                                <div class="col-12">
-                                    <p>Berikut Before After Dari Pekerjaan Kami...</p>
-                                </div>
-                            </div>
-                            <div class="col-12 row boxs-project mt-3">
-                                <div class="col-6 ">
-                                    <div class="row foto">
-                                        <video class="" src="<?= base_url('assets/foto/vid.mp4') ?>" controls alt="s"></video>
-                                    </div>
-                                </div>
-                                <div class="col-6 ">
-                                    <div class="row foto">
-                                    <img class="" src="<?= base_url('assets/foto/6d6c27bc-5501-4120-bf49-39a5820f7acf.JPG') ?>" alt="s"> 
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row foto">
-                                    <img src="<?= base_url('assets/foto/rum.jpg') ?>" alt="s"> 
-                                    </div>
-                                </div>
-                                <div class="col-6 ">
-                                    <div class="row foto">
-                                    <img class="" src="<?= base_url('assets/foto/5040edb4-c8b0-46db-89ed-e75d4c43e651.JPG') ?>" alt="s"> 
-                                    </div>
-                                </div>
-                                <div class="col-6 ">
-                                    <div class="row foto">
-                                        <img src="<?= base_url('assets/foto/09ff3b5b-cb88-4419-b687-fe407325d7f7 (2).JPG') ?>" alt="s">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row foto">
-                                        <video class="" src="<?= base_url('assets/foto/vid2.mp4') ?>" controls alt="s"></video>
-                                    </div>
-                                </div>
-                                <div class="col-6 ">
-                                    <div class="row foto">
-                                    <img class="" src="<?= base_url('assets/foto/salon.jpg') ?>" alt="s"> 
-                                    </div>
-                                </div>
-                                <div class="col-6 ">
-                                    <div class="row foto">
-                                        <img src="<?= base_url('assets/foto/09ff3b5b-cb88-4419-b687-fe407325d7f7 (2).JPG') ?>" alt="s">
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                        <button class="btn btn-primary">Simpan</button>
+                    </form>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
 </html>
-
-<style>
-    .bungkus-mobile{
-        overflow: auto;
-        height: 600px;
-        width: 414px;
-    }
-    .bungkus-mobile2{
-        overflow: auto;
-        height: 600px;
-        width: 414px;
-    }
-</style>
