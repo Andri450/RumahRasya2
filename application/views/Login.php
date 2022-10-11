@@ -12,14 +12,16 @@
     <div class="main col">
         <div class="row">
             <div class="login-form">
-                <form>
+                <form method="POST" action="<?= base_url('Login/cek') ?>">
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email"
+                        name="email">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password"
+                        name="pass">
                     </div>
                     <button type="submit" class="btn btn-black">Login</button>
                 </form>

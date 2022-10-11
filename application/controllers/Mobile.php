@@ -11,7 +11,7 @@ class Mobile extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->model('m_data');
-		
+
 		$dat['logo'] = $this->m_data->ambil_logo()->result();
 		$dat['sub_judul'] = $this->m_data->ambil_sub_judul()->result();
 		$dat['foto_heading'] = $this->m_data->ambil_foto_heading()->result();
@@ -21,7 +21,7 @@ class Mobile extends CI_Controller {
 		$dat['sub_legal'] = $this->m_data->ambil_sub_legal()->result();
 		$dat['harga'] = $this->m_data->ambil_harga()->result();
 
-		$this->load->view('Mobile');
+		$this->load->view('Mobile', $dat);
 	}
 
 	public function upload_feedback(){
@@ -36,7 +36,7 @@ class Mobile extends CI_Controller {
 		);
 
 		$this->m_data->upload_feedback($dats);
-		
+		?> <script>alert('Berhasil Dikirim')</script> <?php
 		redirect('Mobile');
 	}
 }

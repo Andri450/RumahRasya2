@@ -766,5 +766,12 @@
             </div>
         </div>
     </div>
+
+    <div class="feedback">
+        <a href="<?= base_url('Admin/feedback') ?>"><i class="fa-solid fa-comments"></i></a>
+    </div>
+    <div class="Logout">
+        <a href="<?= base_url('Admin/Logout') ?>">Logout</a>
+    </div>
 </body>
 </html>

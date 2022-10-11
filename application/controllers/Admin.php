@@ -7,6 +7,13 @@ class Admin extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('m_data');
         $this->load->helper('url');
+		$this->load->library('session');
+
+		if($this->session->userdata('is_login')){
+            
+        }else{
+			redirect('Login');
+		}
 	}
 
 	public function index()
@@ -117,5 +124,18 @@ class Admin extends CI_Controller {
 		$harga = $this->input->post('perMeter');
 		$this->m_data->ubah_harga($harga);
 		redirect('Admin');
+	}
+
+	public function feedback(){
+		$this->db->order_by('id', 'DESC');
+		$data['feedback'] = $this->db->get('feedback')->result();
+		
+
+		$this->load->view('Feedback', $data);
+	}
+
+	public function Logout(){
+		$this->session->sess_destroy();
+		redirect('Login');
 	}
 }
