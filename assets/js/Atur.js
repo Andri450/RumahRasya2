@@ -20,7 +20,7 @@ $(function () {
 					top: dats[i]['yPos'],
 					left: dats[i]['xPos'],
 				})
-
+ 
 				$("#" + nama_prop).draggable({
 					addClasses: true,
 					appendTo: "body",
